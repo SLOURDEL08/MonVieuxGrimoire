@@ -1,0 +1,27 @@
+# Dossiers et fichiers générés automatiquement
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+*.env
+
+# Dossiers spécifiques à l'éditeur
+.vscode/
+.idea/
+
+# Fichiers de sauvegarde
+*.bak
+
+# Fichiers de log
+*.log
+
+# Dossiers de build
+/build/
+/dist/
+
+# Fichiers de configuration spécifiques à l'utilisateur
+.editorconfig
+.eslintcache
+
+.env
