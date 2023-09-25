@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { displayStars } from '../../../lib/functions';
 import styles from './BookItem.module.css';
 
+
 function BookItem({ book, size }) {
   let title;
   switch (size) {
@@ -17,10 +18,19 @@ function BookItem({ book, size }) {
       title = <h2>{book.title}</h2>;
       break;
   }
+
+  const imageUrl = book.imageUrl.startsWith('http://localhost:4000/')
+  ? book.imageUrl
+  : `http://localhost:4000/${book.imageUrl}`;
+  
   return (
     <Link to={`/livre/${book.id}`} className={styles.BookItem}>
       <article>
-        <img className={styles.BookImage} src={book.imageUrl} alt={`${book.title}, ${book.author} - ${book.year}`} />
+      <img
+  className={styles.BookImage}
+  src={imageUrl}
+  alt={`${book.title}, ${book.author} - ${book.year}`}
+/>
         <div className={styles.BookInfo}>
           <div className={styles.Rating}>
             {displayStars(book.averageRating)}

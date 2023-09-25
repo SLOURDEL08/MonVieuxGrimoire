@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useUser } from '../../lib/customHooks';
@@ -45,7 +43,8 @@ function Book() {
     } else if (!userLoading && !connectedUser && book) {
       setLoading(false);
     }
-  }, [book, userLoading]);
+  }, [book, userLoading, connectedUser]); // Ajoutez connectedUser ici dans le tableau des dépendances
+  
 
   const onDelete = async (e) => {
     if (e.key && e.key !== 'Enter') {
